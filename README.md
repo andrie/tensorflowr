@@ -43,3 +43,7 @@ To execute code inside the running container:
 ```
 docker exec -ti tensorflowr bash
 ```
+
+# License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) © Andrie de Vries
