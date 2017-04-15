@@ -44,6 +44,38 @@ To execute code inside the running container:
 docker exec -ti tensorflowr bash
 ```
 
+# Hello world
+
+To test `tensorflow`, try the `Hallo world` example from the `tensorflow` R package:
+
+```r
+library(tensorflow)
+sess = tf$Session()
+hello <- tf$constant('Hello, TensorFlow!')
+sess$run(hello)
+```
+
+To test `keras`, try the code from the `kerasR` [vignette](https://cran.r-project.org/web/packages/kerasR/vignettes/introduction.html):
+
+```r
+library(kerasR)
+mod <- Sequential()
+mod$add(Dense(units = 50, input_shape = 13))
+mod$add(Activation("relu"))
+mod$add(Dense(units = 1))
+keras_compile(mod,  loss = 'mse', optimizer = RMSprop())
+boston <- load_boston_housing()
+X_train <- scale(boston$X_train)
+Y_train <- boston$Y_train
+X_test <- scale(boston$X_test)
+Y_test <- boston$Y_test
+keras_fit(mod, X_train, Y_train,
+          batch_size = 32, epochs = 200,
+          verbose = 1, validation_split = 0.1)
+pred <- keras_predict(mod, normalize(X_test))
+sd(as.numeric(pred) - Y_test) / sd(Y_test)
+```
+
 # License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) © Andrie de Vries
