@@ -1,7 +1,3 @@
-[![CircleCI](https://circleci.com/gh/andrie/tensorflowr.svg?style=svg)](https://circleci.com/gh/andrie/tensorflowr)
-[![license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://opensource.org/licenses/GPL-2.0)
-
-
 # tensorflowr: Docker repository with deep learning for R.
 
 image            | description                               | size   | metrics | build status 
