@@ -1,15 +1,18 @@
 # tensorflowr: Docker repository with deep learning for R.
 
-image            | description                               | size   | metrics | build status 
----------------- | ----------------------------------------- | ------ | ------- | --------------
-[tensorflow](https://hub.docker.com/r/andrie/tensorflowr) | R-3.3.3, RStudio, tensorflow and keras  | [![](https://images.microbadger.com/badges/image/andrie/tensorflowr.svg)](https://microbadger.com/images/andrie/tensorflowr) | [![](https://img.shields.io/docker/pulls/andrie/tensorflowr.svg)](https://hub.docker.com/r/andrie/tensorflowr) |  [![](https://img.shields.io/docker/automated/andrie/tensorflowr.svg)](https://hub.docker.com/r/andrie/tensorflowr/builds)
+image            | description                               | from |size   | metrics | build status 
+---------------- | ----------------------------------------- | ---- | ------ | ------- | --------------
+[deepnet_common](https://hub.docker.com/r/andrie/deepnet_common) |  R-3.3.3, RStudio and Anaconda | [rocker/rstudio:3.3.3](https://hub.docker.com/r/rocker/rstudio/) | [![](https://images.microbadger.com/badges/image/andrie/deepnet_common.svg)](https://microbadger.com/images/andrie/deepnet_common) | [![](https://img.shields.io/docker/pulls/andrie/deepnet_common.svg)](https://hub.docker.com/r/andrie/deepnet_common) |  [![](https://img.shields.io/docker/automated/andrie/deepnet_common.svg)](https://hub.docker.com/r/andrie/deepnet_common/builds)
+[tensorflowr](https://hub.docker.com/r/andrie/tensorflowr) | Adds python2.7, tensorflow and keras | [deepnet_common](https://hub.docker.com/r/andrie/deepnet_common) | [![](https://images.microbadger.com/badges/image/andrie/tensorflowr.svg)](https://microbadger.com/images/andrie/tensorflowr) | [![](https://img.shields.io/docker/pulls/andrie/tensorflowr.svg)](https://hub.docker.com/r/andrie/tensorflowr) |  [![](https://img.shields.io/docker/automated/andrie/tensorflowr.svg)](https://hub.docker.com/r/andrie/tensorflowr/builds)
+[tensorflowr35](https://hub.docker.com/r/andrie/tensorflowr35) | Adds python3.5, tensorflow and keras | [deepnet_common](https://hub.docker.com/r/andrie/deepnet_common) | [![](https://images.microbadger.com/badges/image/andrie/tensorflowr35.svg)](https://microbadger.com/images/andrie/tensorflowr35) | [![](https://img.shields.io/docker/pulls/andrie/tensorflowr35.svg)](https://hub.docker.com/r/andrie/tensorflowr35) |  [![](https://img.shields.io/docker/automated/andrie/tensorflowr35.svg)](https://hub.docker.com/r/andrie/tensorflowr35/builds)
 
 The repository uses [rocker/rstudio:3.3.3](https://hub.docker.com/r/rocker/rstudio/) as the base, and adds:
 
-* Python virtual environment ([virtualenv](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/)) containing:
+* Anaconda environment ([conda env](https://conda.io/docs/using/envs.html)) containing:
     - `tensorflow` library ([tensorflow.org](https://www.tensorflow.org/))
     - `keras` library ([keras.io](https://keras.io/))
 * R packages for:
+    - `reticulate`, an interface layer between R and python, installed from [CRAN](https://cran.r-project.org/package=reticulate)
     - `tensorflow`, installed from [master branch on github](https://github.com/rstudio/tensorflow)
     - `kerasR`, installed from [CRAN](https://cran.r-project.org/package=kerasR)
 
