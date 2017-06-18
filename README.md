@@ -31,6 +31,7 @@ This repository builds two environments that contain `tensorflow` ([tensorflow.o
         ```bash
         source /tensorflow/bin/activate
         ```
+    - A CRAN mirror pointing to a static MRAN snapshot of 2017-06-01
 
 * Anaconda environment ([conda env](https://conda.io/docs/using/envs.html)) containing:
     - conda environment `tensorflow`
