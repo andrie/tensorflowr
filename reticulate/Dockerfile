@@ -1,6 +1,6 @@
 FROM rocker/rstudio:3.3.3
 
-ENV CRAN_MIRROR https://mran.microsoft.com/snapshot/2017-06-01
+ENV CRAN_MIRROR https://mran.microsoft.com/snapshot/2017-06-15
 
 RUN apt-get update --fix-missing \
 	&& apt-get install -y \
@@ -36,7 +36,9 @@ RUN install2.r --repos ${CRAN_MIRROR}\
 		knitr \
 		rmarkdown \
 		yaml \
-		reticulate
+		reticulate \
+		ggplot2 \
+		dplyr
 
 # Run rocker/rstudio init
 CMD ["/init"]
